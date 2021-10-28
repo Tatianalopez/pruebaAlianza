@@ -1,0 +1,21 @@
+<div class="card-footer text-muted pagination disabled">
+    <ul *ngIf="paginas && paginas.length > 0" class="pagination">
+
+
+        <li class="page-item" *ngIf="paginador.number > 0">
+            <a class="page-link" (click)="callParent(paginador.number)">&laquo;</a>
+        </li>
+        <li class="page-item" *ngFor="let numeroPagina of paginas" [ngClass]="numeroPagina - 1 == paginador.number? 'disabled':''">
+            <span class="page-link" *ngIf="numeroPagina - 1 == paginador.number">{{numeroPagina}}</span>
+            <a *ngIf="numeroPagina - 1 != paginador.number" class="page-link" (click)="callParent(numeroPagina)">{{numeroPagina}}</a>
+        </li>
+    
+        <li class="page-item" *ngIf="paginador.number < paginador.totalPages-1">
+            <a class="page-link" (click)="callParent(paginador.number + 2)">&raquo;</a>
+        </li>
+    
+    </ul>
+    <li class="page-item" *ngIf="paginador && (paginador.number < paginador.totalPages-1)">
+        <a class="page-link">Total elementos : {{paginador.totalElements}}</a>
+    </li>
+</div>

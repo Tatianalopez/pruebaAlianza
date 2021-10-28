@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light" style="background-color: #FFFFFF;">
+ <div class="container-fluid">
+  <div class="input-group">
+    <img [src]="imageSrc" class="align-top "  alt="">
+   </div>
+  </div>
+</nav>
+<div class="container d-flex align-items-center justify-content-center">
+    <div class=" row container mt-4">
+
+        <div class="col-3">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+</div>
